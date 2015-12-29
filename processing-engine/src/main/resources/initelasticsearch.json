@@ -1,0 +1,11 @@
+{
+    "event" : {
+      "properties" : {
+        	   "eventTime" : {"type" : "date", "store" : true , "index" : "not_analyzed" },
+               "body" : {"type" : "string", "store" : true , "index" : "analyzed" },
+               "status" : {"type" : "string", "store" : true , "index" : "not_analyzed"},
+               "source" : {"type" : "string", "store" : true , "index" : "not_analyzed"},
+               "destination" : {"type" : "string", "store" : true , "index" : "not_analyzed"}
+      }
+    }
+}

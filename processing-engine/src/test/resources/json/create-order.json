@@ -1,0 +1,44 @@
+{
+  "header": {
+    "messageType": "ORDER",
+    "messageTypeVersion": "1",
+    "correlationId": "correlationId",
+    "channelId": "web",
+    "sender": "web",
+    "sendTimestamp": "2015-01-01T12:00:00",
+    "authorization": {
+      "key": "key",
+      "secret": "secret"
+    }
+  },
+  "body": {
+    "order": {
+      "orderType": "REGISTRATION",
+      "orderId": "M123456",
+      "recruitmentReference": "XYZ",
+      "customer": {
+        "firstName": "John",
+        "lastName": "Doe",
+        "deliveryAddress": {
+          "street": "Street",
+          "city": "City",
+          "zip": "12345",
+          "country": "at"
+        },
+        "language": "de"
+      },
+      "products": [
+        {
+          "serviceType": "NEW",
+          "domain": "at",
+          "productType": "SERVICE",
+          "id": "42561"
+        },
+        {
+          "productType": "CARD",
+          "id": "42562"
+        }
+      ]
+    }
+  }
+}

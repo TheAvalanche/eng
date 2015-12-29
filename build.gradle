@@ -1,0 +1,50 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.2.2.RELEASE")
+    }
+}
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'groovy'
+    apply plugin: 'idea'
+    apply plugin: 'spring-boot'
+
+    group = 'com.symphodia.eng'
+    version = '1.0'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        compile("org.springframework.boot:spring-boot-starter-ws")
+        compile("org.springframework.boot:spring-boot-starter-actuator")
+        compile("org.springframework.boot:spring-boot-starter-logging")
+        compile("com.google.guava:guava:18.0")
+        compile("com.symphodia.spring:spring-eng-common:1.07")
+        testCompile("org.springframework.boot:spring-boot-starter-test")
+        testCompile("org.codehaus.groovy:groovy-all:2.4.3")
+        testCompile("org.spockframework:spock-core:1.0-groovy-2.4")
+        testCompile("org.spockframework:spock-spring:1.0-groovy-2.4")
+        testRuntime("cglib:cglib-nodep:3.1")
+        testRuntime("org.objenesis:objenesis:2.1")
+    }
+
+    task wrapper(type: Wrapper) {
+        gradleVersion = '2.3'
+    }
+
+    bootRun {
+        jvmArgs = ["-Dspring.profiles.active=dev", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5005"]
+    }
+
+}

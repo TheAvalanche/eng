@@ -1,0 +1,4 @@
+rootProject.name = 'eng'
+
+include 'processing-engine'
+

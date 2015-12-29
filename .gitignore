@@ -1,0 +1,36 @@
+# Generic #
+*~
+*.locl
+*.DS_Store
+*.swp
+*.out
+log.gen
+out
+
+# Java build files #
+*.class
+target/
+*.jar
+!gradle-wrapper.jar
+*.war
+*.ear
+
+
+# Project Files #
+*.iml
+.idea/
+.classpath
+.settings/
+.loadpath
+.launch
+
+# Database dump creation #
+export.log
+import.log
+
+# Gradle
+.gradle
+build/
+/*.db
+/prov-engine/*.db
+/prov-engine/src/test/resources/servicebus.properties
